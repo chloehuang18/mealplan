@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+  }
+
+.main-top img{
+    /* position: absolute; */
+    width: 100vw;
+    height: 20vw;
+    left: 0px; 
+    top: 0px;
+    /* background: url(food-header.png); */
+}
+
+
+.main-down {
+    width: 100vw;
+    height: 50vw;
+    float: left;
+    padding: 15px;
+    border: 1px solid red;
+  }
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    background-color: #2196F3;
+    padding: 10px;
+}
+  
+.grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
