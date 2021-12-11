@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Recipe</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href='https://css.gg/add-r.css' rel='stylesheet'>
+<link rel="stylesheet" href="recipe-add.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+ <!--                                  Header                                  -->
+ <!------------------------------------------------------------------------------>
+<div class="sidenav">
+  <a href="index.html">Home</a>
+  <a href="recipe-main.html">Recipe</a>
+  <a href="recipe-tag.html">Tags</a>
+  <a href="/pages/planner.html">Meal Plan</a>
+  <a href="/pages/groclist.html"> List</a>
+  <!-- <a href="#">Restock List</a> -->
+</div>
+
+<div class="content-1">
+  <h2>Add Recipe</h2>
+  <!-- <p>A full-height, fixed sidenav and content.</p> -->
+</div>
+<hr>
+ 
+<div class="content">
+  <section class="cards">
+    <form class="add-recipe-form">
+        <div class="flex-row">
+            <div class="form-inline">
+                <label for="name">Recipe Name </label><input type="search" class="add-name" id="add-name" placeholder="Recipe Name">
+                <label for="category">Category </label><input type="search" class="add-category" id="add-category" placeholder="Category">
+            </div>
+            <div class="form-inline">
+                <label for="serving">Serving </label><input type="search" class="add-serving" id="add-serving" placeholder="Serving">
+                <label for="time">Cook Time </label><input type="text" class="add-time" id="add-time" placeholder="Cook Time (Minutes)">
+            </div>
+            <div class="form-inline select">
+                <label for="level">Choose a level</label>
+                <select name="level" id="add-level" class="mySelectArrow">
+                    <option>Select Level</option>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+        </div>
+        <div class="flex-row">
+            <label for="Ingridient">Ingridient </label><textarea class="add-ingridient" id="add-ingridient" cols="30" rows="10"></textarea>
+            <label for="Instruction">Instruction </label><textarea class="add-instruction" id="add-instruction" cols="30" rows="10"></textarea>            
+        </div>
+        <div class="file-main">
+            <label for="Image">Choose Image File<File> <input type="file" id="add-image" class="file">
+        </div>
+        <div class="submit">
+            <button class="btn submit-form" id="btn" type="submit">Click to Add</button>
+        </div>
+    </form>
+    <div id="msg">
+        <pre></pre>
+    </div>  
+    <script>
+        let recipes = [];
+        const addRecipe = (ev) =>{
+            // prevent it to reload the page
+            ev.preventDefault();
+
+            let recipe = {
+                id: Date.now(),
+                name: document.getElementById("add-name").value,
+                category: document.getElementById("add-category").value,
+                serving: document.getElementById("add-serving").value,
+                time: document.getElementById("add-time").value,
+                level: document.getElementById("add-level").value,
+                ingridient: document.getElementById("add-ingridient").value,
+                instruction: document.getElementById("add-instruction").value,
+                image: document.getElementById("add-image").value
+            }
+            recipes.push(recipe);
+
+            // document.forms[0].reset(); same purpose with the next line
+            document.querySelector('form').reset()
+
+            console.warn('add', {recipes});
+
+            // for display purpose
+            let pre = document.querySelector('#msg pre');
+            pre.textContent = '\n' + JSON.stringify(recipes, '\t', 2);
+
+            localStorage.setItem('MyReciptData', JSON.stringify(recipes));
+        }
+
+        // when click the add btn, call add recipt
+        document.addEventListener('DOMContentLoaded', ()=>{
+            document.getElementById('btn').addEventListener('click', addRecipe);
+        });
+    </script>
+  </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,300 @@
+@import url('https://css.gg/add-r.css');
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+hr {
+  border: 1px solid rgb(250, 0, 0);
+}
+
+/* Style the side navigation */
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(253, 155, 155);
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+
+/* Side navigation links */
+.sidenav a {
+  color: white;
+  padding: 16px;
+  margin: auto;
+  text-decoration: none;
+  /* transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out; */
+  display: block;
+  margin-top: 2vw;
+  margin-left: 1vw;
+}
+
+/* Change color on hover */
+.sidenav a:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(253, 155, 155);
+  box-shadow: 0px 30px 18px -8px rgba(75, 74, 74, 0.1);
+  transform: scale(1.10, 1.10);
+}
+
+.content-1 {
+  margin-left: 50%;
+  font-size: xx-large;
+  display: block;
+  color:rgb(245, 96, 27); 
+}
+
+.content-2 {
+  margin-left: 55%;
+  margin-top: 2vw;
+  display: block;
+  height: 4vw; 
+}
+
+/* Style the content */
+.content {
+  /* width:inherit; */
+  margin-left: 200px;
+  padding-left: 2vw;
+}
+
+.content-buttom {
+  margin-left: 53%;
+  display: block;
+  margin-top: 5vw;
+  height: 20vw;
+}
+
+/* <!--                                Recipe card                                -->
+ <!------------------------------------------------------------------------------> */
+
+.cards {
+    width: 100%;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    max-width: 85vw;
+    margin-bottom: 5vw;
+}
+
+.card--1 .card__img, .card--1 .card__img--hover {
+    background-image: url('https://images.pexels.com/photos/45202/brownie-dessert-cake-sweet-45202.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
+}
+
+.card--2 .card__img, .card--2 .card__img--hover {
+    background-image: url('assets/soup.svg');
+}
+
+.card--3 .card__img, .card--3 .card__img--hover {
+  background-image: url('assets/noodle.svg');  
+}
+
+.card--4 .card__img, .card--4 .card__img--hover {
+  background-image: url('assets/spring.png');
+}
+
+.card--5 .card__img, .card--5 .card__img--hover {
+  background-image: url('assets/chinese.svg');
+}
+
+.card--6 .card__img, .card--6 .card__img--hover {
+    background-image: url('assets/korean.png');
+}
+
+.card--7 .card__img, .card--7 .card__img--hover {
+    background-image: url('assets/pancake.svg');
+}
+
+.card--8 .card__img, .card--8 .card__img--hover {
+    background-image: url('assets/straw-tart.svg');
+}
+
+.card__like {
+    width: 18px;
+}
+
+.card__clock {
+    width: 15px;
+    vertical-align: middle;
+    fill: #AD7D52;
+}
+.card__time {
+    font-size: 12px;
+    color: #AD7D52;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.card__clock-info {
+    float: right;
+}
+
+.card__img {
+  visibility: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 235px;
+  border-top-left-radius: 12px;
+border-top-right-radius: 12px;
+  
+}
+
+.card__info-hover {
+    position: absolute;
+    padding: 16px;
+  width: 100%;
+  opacity: 0;
+  top: 0;
+}
+
+.card__img--hover {
+  transition: 0.2s all ease-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    position: absolute;
+    height: 235px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    top: 0;
+  
+}
+.card {
+  margin-right: 25px;
+  transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+  background-color: #fff;
+  width: 33.3%;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 13px 10px -7px rgba(0, 0, 0,0.1);
+}
+.card:hover {
+  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1);
+    transform: scale(1.10, 1.10);
+}
+
+.card__info {
+    z-index: 2;
+    background-color: #fff;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding: 16px 24px 24px 24px;
+}
+
+.card__category {
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 500;
+  color: #868686;
+}
+
+.card__title {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-family: 'Roboto Slab', serif;
+}
+
+.card__by {
+    font-size: 12px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+}
+
+.card__author {
+    font-weight: 600;
+    text-decoration: none;
+    color: #AD7D52;
+}
+
+.card:hover .card__img--hover {
+    height: 100%;
+    opacity: 0.3;
+}
+
+.card:hover .card__info {
+    background-color: transparent;
+    position: relative;
+}
+
+.card:hover .card__info-hover {
+    opacity: 1;
+}
+
+
+/* <!--                                  Search                                  -->
+ <!------------------------------------------------------------------------------> */
+
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #f3c52e;
+  /* border-right: none; */
+  padding: 5px;
+  height: 36px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #070808;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #f3c52e;
+  background: #f3c52e;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 20vw;
+  transform: translate(-50%, -50%);
+}
+
+
+
+.btn {
+  background-color: rgb(255, 94, 30);
+  border: none;
+  color: white;
+  padding: 15px 20px;
+  font-size: 5px;
+  cursor: pointer;
+  border-radius: 15px;
+  box-shadow: 0 5px rgb(185, 184, 184);
+}
+
+.btn:hover {
+  background-color: rgb(250, 139, 75);
+}
